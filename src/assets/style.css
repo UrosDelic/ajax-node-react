@@ -1,0 +1,38 @@
+body {
+  background: url("/src/assets/quantox-logo-bkg.png") no-repeat fixed top;
+}
+
+.loginForm-container {
+  display: flex;
+  flex-direction: column;
+  width: 13%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 42%;
+  right: 50%;
+  top: 50%;
+  color: #97ca3a;
+  height: 43%;
+}
+label {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+input {
+  margin-bottom: 1em;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #97ca3a;
+}
+textArea {
+  margin-top: 5rem;
+  padding-top: 5rem;
+  background: transparent;
+}
+
+button {
+  width: 50%;
+  min-width: 30%;
+  background-color: #97ca3a;
+}
