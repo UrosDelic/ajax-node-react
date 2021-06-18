@@ -3,7 +3,7 @@ import httpRequest from "./HttpRequest.js";
 export class GetData {
   async getData() {
     try {
-      const response = await httpRequest.get("https://reqres.in/api/users?page=2");
+      const response = await httpRequest.get("http://localhost:8080/get-data");
       if (response) {
         return response;
       }

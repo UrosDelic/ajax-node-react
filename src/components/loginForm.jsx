@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../assets/style.css";
-import "../client/GetData";
-import getData  from "../client/GetData";
+import getData from "../client/GetData";
 class LoginForm extends Component {
   state = {};
   render() {
@@ -23,7 +22,7 @@ class LoginForm extends Component {
             Show data:
           </label>
           <textarea id='textArea' className='text-area'></textarea>
-          <button className='btn' id='btn-get-data' onClick={this.showData}>
+          <button className='btn' id='btn-get-data' onClick={this.getServerData}>
             Get data
           </button>
         </div>
@@ -31,8 +30,15 @@ class LoginForm extends Component {
     );
   }
 
-  showData = () => {
-    getData.getData().then((response) => {});
+  getServerData = () => {
+    getData
+      .getData()
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 }
 

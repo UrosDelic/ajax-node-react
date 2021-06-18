@@ -1,38 +1,63 @@
 body {
-  background: url("/src/assets/quantox-logo-bkg.png") no-repeat fixed top;
+  color: #96ca3a;
+  font-family: "Montserrat", sans-serif;
+  background: url("./quantox-logo-bkg.png") no-repeat fixed top;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 61vh;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .loginForm-container {
   display: flex;
   flex-direction: column;
-  width: 13%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 42%;
-  right: 50%;
-  top: 50%;
-  color: #97ca3a;
-  height: 43%;
 }
 label {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 input {
-  margin-bottom: 1em;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  width: 47%;
+  color: lightgrey;
+  background-color: black;
   background: transparent;
-  border: none;
-  border-bottom: 2px solid;
-  border-color: #97ca3a;
+  border: 0px;
+  border-bottom: 2px solid #96ca3a;
 }
+.displayArea {
+  display: flex;
+  flex-direction: column;
+}
+
 textArea {
-  margin-top: 5rem;
-  padding-top: 5rem;
+  font-weight: bolder;
   background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #96ca3a;
+
+  color: lightgrey;
+  width: 47%;
+  resize: vertical;
+  min-height: 5em;
+  max-height: 18em;
 }
 
 button {
-  width: 50%;
-  min-width: 30%;
-  background-color: #97ca3a;
+  margin-top: 1em;
+  background-color: #96ca3a;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 3px;
+  font-family: "Montserrat", sans-serif;
+  border-color: #96ca3a;
+  width: 30%;
 }
