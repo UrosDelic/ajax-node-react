@@ -2,14 +2,27 @@ import React, { Component } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
 class LoginForm extends Component {
-  state = {};
+  state = {
+    responseData: [],
+  };
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   };
-  // }, [input]);
+  getServerData = () => {
+    getData
+      .getData()
+      .then((response) => {
+        this.setState({ responseData: response });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  showData = () => {
+    if (this.state.responseData.length === 0) {
+      return "";
+    } else
+      return `email:${this.state.responseData.email} password:${this.state.responseData.password}`;
+  };
 
   render() {
     return (
@@ -29,7 +42,7 @@ class LoginForm extends Component {
           <label className="label" htmlFor="text-area">
             Show data:
           </label>
-          <textarea id="textArea" className="text-area"></textarea>
+          <textarea id="textArea" className="text-area" readOnly value={this.showData()}></textarea>
           <button className="btn" id="btn-get-data" onClick={this.getServerData}>
             Get data
           </button>
@@ -37,17 +50,6 @@ class LoginForm extends Component {
       </div>
     );
   }
-
-  getServerData = () => {
-    getData
-      .getData()
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
 }
 
 export default LoginForm;
