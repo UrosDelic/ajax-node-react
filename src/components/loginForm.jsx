@@ -13,7 +13,6 @@ class LoginForm extends Component {
 
     this.emailHandleChange = this.emailHandleChange.bind(this);
     this.passwordHandleChange = this.passwordHandleChange.bind(this);
-    this.textareaHandleChange = this.textareaHandleChange.bind(this);
   }
 
   emailHandleChange(event) {
@@ -24,15 +23,12 @@ class LoginForm extends Component {
     this.setState({ password: event.target.value });
   }
 
-  textareaHandleChange(event) {
-    this.setState({ responseData: event.target.value });
-  }
-
   getServerData = () => {
     getData
       .getData()
       .then((response) => {
-        this.setState({ responseData: response });
+        console.log();
+        this.setState({ email: response.email, password: response.password });
       })
       .catch((error) => {
         console.error(error);
@@ -53,10 +49,9 @@ class LoginForm extends Component {
   };
 
   showData = () => {
-    if (this.state.responseData.length === 0) {
-      return "";
-    } else
-      return `email: ${this.state.responseData.email}\npassword: ${this.state.responseData.password}`;
+    if (this.state.email === "" || this.state.password === "") {
+      return ``;
+    } else return `email: ${this.state.email}\npassword: ${this.state.password}`;
   };
 
   render() {
@@ -89,13 +84,7 @@ class LoginForm extends Component {
           <label className="label" htmlFor="text-area">
             Show data:
           </label>
-          <textarea
-            id="textArea"
-            className="text-area"
-            readOnly
-            value={this.showData()}
-            onChange={this.textareaHandleChange}
-          ></textarea>
+          <textarea id="textArea" className="text-area" readOnly value={this.showData()}></textarea>
           <button className="btn" id="btn-get-data" onClick={this.getServerData}>
             Get data
           </button>
