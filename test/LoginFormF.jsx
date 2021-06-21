@@ -4,6 +4,7 @@ import "../assets/style.css";
 import getData from "../client/GetData";
 
 const LoginForm = () => {
+  
   useEffect(() => {
     getServerData();
   }, []);

@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
+import DTextArea from "./DTextArea";
+import DInput from "./DInput";
 class LoginForm extends Component {
   constructor() {
     super();
 
     this.state = {
-      responseData: [],
+      infoText: "",
       email: "",
       password: "",
+      txtAreaHidden: true,
     };
 
     this.emailHandleChange = this.emailHandleChange.bind(this);
@@ -42,50 +45,53 @@ class LoginForm extends Component {
     };
     getData
       .postData(obj)
-      .then((response) => console.log(response))
+      .then((response) => {
+        this.setState({ infoText: `data sent successfully!`, txtAreaHidden: false });
+      })
       .catch((error) => {
         console.error(error);
       });
   };
 
-  showData = () => {
-    if (this.state.email === "" || this.state.password === "") {
+  showInfo = () => {
+    if (this.state.infoText === "") {
       return ``;
-    } else return `email: ${this.state.email}\npassword: ${this.state.password}`;
+    } else return this.state.infoText;
   };
 
   render() {
     return (
-      <div className="loginForm-container">
-        <label className="label" htmlFor="email">
+      <div className='loginForm-container'>
+        <h1>Ajax - Node.js in React</h1>
+        <label className='label' htmlFor='email'>
           Email:
         </label>
-        <input
-          className="input"
-          type="text"
-          id="emailField"
+        <DInput
+          type='text'
+          id='emailField'
           value={this.state.email}
           onChange={this.emailHandleChange}
         />
-        <label className="label" htmlFor="password">
+        <label className='label' htmlFor='password'>
           Password:
         </label>
-        <input
-          className="input"
-          type="text"
-          id="passwordField"
+        <DInput
+          type='password'
+          id='passwordField'
           value={this.state.password}
           onChange={this.passwordHandleChange}
         />
-        <button className="btn" id="btn-post-data" onClick={this.postInputData}>
+        <button
+          disabled={!this.state.password || !this.state.email}
+          className='btn'
+          id='btn-post-data'
+          onClick={this.postInputData}
+        >
           Post Data
         </button>
-        <div className="displayArea">
-          <label className="label" htmlFor="text-area">
-            Show data:
-          </label>
-          <textarea id="textArea" className="text-area" readOnly value={this.showData()}></textarea>
-          <button className="btn" id="btn-get-data" onClick={this.getServerData}>
+        <div className='displayArea'>
+          <DTextArea hidden={this.state.txtAreaHidden} readOnly value={this.showInfo()} />
+          <button className='btn' id='btn-get-data' onClick={this.getServerData}>
             Get data
           </button>
         </div>
