@@ -2,7 +2,8 @@ import { useState } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
 import Dinput from "../components/Dinput";
-import DtextArea from "../components/DtextArea";
+// import DtextArea from "../components/DtextArea";
+import DtextAreaFn from "./DtextAreaFn";
 
 const LoginFormFn = () => {
   const [email, setEmail] = useState("");
@@ -58,7 +59,8 @@ const LoginFormFn = () => {
         Post Data
       </button>
       <div className='displayArea'>
-        <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} />
+        {/* <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} /> */}
+        <DtextAreaFn hidden={txtAreaHidden} readOnly value={showInfo()} />
         <button className='btn' id='btn-get-data' onClick={getServerData}>
           Get data
         </button>
