@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DTextArea extends Component {
+class DtextArea extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -19,4 +19,4 @@ class DTextArea extends Component {
   }
 }
 
-export default DTextArea;
+export default DtextArea;

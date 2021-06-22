@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class DInput extends Component {
+class Dinput extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -17,4 +17,4 @@ class DInput extends Component {
   }
 }
 
-export default DInput;
+export default Dinput;

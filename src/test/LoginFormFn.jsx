@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
-import DInput from "../components/DInput";
-import DTextArea from "../components/DTextArea";
+import Dinput from "../components/Dinput";
+import DtextArea from "../components/DtextArea";
 
 const LoginFormFn = () => {
   const [email, setEmail] = useState("");
@@ -44,11 +44,11 @@ const LoginFormFn = () => {
       <label className='label' htmlFor='email'>
         Email:
       </label>
-      <DInput type='text' id='emailField' value={email} onChange={emailHandleChange} />
+      <Dinput type='text' id='emailField' value={email} onChange={emailHandleChange} />
       <label className='label' htmlFor='password'>
         Password:
       </label>
-      <DInput type='password' id='passwordField' value={password} onChange={passwordHandleChange} />
+      <Dinput type='password' id='passwordField' value={password} onChange={passwordHandleChange} />
       <button
         disabled={!password || !email}
         className='btn'
@@ -58,7 +58,7 @@ const LoginFormFn = () => {
         Post Data
       </button>
       <div className='displayArea'>
-        <DTextArea hidden={txtAreaHidden} readOnly value={showInfo()} />
+        <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} />
         <button className='btn' id='btn-get-data' onClick={getServerData}>
           Get data
         </button>

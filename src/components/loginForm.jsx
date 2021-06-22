@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
-import DTextArea from "./DTextArea";
-import DInput from "./DInput";
+import DtextArea from "./DtextArea";
+import Dinput from "./Dinput";
 class LoginForm extends Component {
   constructor() {
     super();
@@ -66,7 +66,7 @@ class LoginForm extends Component {
         <label className='label' htmlFor='email'>
           Email:
         </label>
-        <DInput
+        <Dinput
           type='text'
           id='emailField'
           value={this.state.email}
@@ -75,7 +75,7 @@ class LoginForm extends Component {
         <label className='label' htmlFor='password'>
           Password:
         </label>
-        <DInput
+        <Dinput
           type='password'
           id='passwordField'
           value={this.state.password}
@@ -90,7 +90,7 @@ class LoginForm extends Component {
           Post Data
         </button>
         <div className='displayArea'>
-          <DTextArea hidden={this.state.txtAreaHidden} readOnly value={this.showInfo()} />
+          <DtextArea hidden={this.state.txtAreaHidden} readOnly value={this.showInfo()} />
           <button className='btn' id='btn-get-data' onClick={this.getServerData}>
             Get data
           </button>
