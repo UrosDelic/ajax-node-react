@@ -18,13 +18,13 @@ class LoginForm extends Component {
     this.passwordHandleChange = this.passwordHandleChange.bind(this);
   }
 
-  emailHandleChange(event) {
+  emailHandleChange = (event) => {
     this.setState({ email: event.target.value });
-  }
+  };
 
-  passwordHandleChange(event) {
+  passwordHandleChange = (event) => {
     this.setState({ password: event.target.value });
-  }
+  };
 
   getServerData = () => {
     getData

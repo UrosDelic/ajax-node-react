@@ -9,10 +9,10 @@ class DTextArea extends Component {
   render() {
     return (
       <textarea
+        className='textArea'
         hidden={this.props.hidden}
         readOnly={this.props.readOnly}
         value={this.props.value}
-        className='textArea'
         id={this.props.id}
       ></textarea>
     );
