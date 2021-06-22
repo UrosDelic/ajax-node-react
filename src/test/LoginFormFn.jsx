@@ -3,18 +3,22 @@ import "../assets/style.css";
 import "../components/LoginForm/LoginForm.css";
 import getData from "../client/GetData";
 import Dinput from "../components/customElements/Dinput";
-// import DtextArea from "../components/customElements/DtextArea";
-import DtextAreaFn from "./DtextAreaFn";
+import DtextArea from "../components/customElements/DtextArea";
+// import DtextAreaFn from "./DtextAreaFn";
 
 const LoginFormFn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
   const [txtAreaHidden, setTxtArea] = useState(true);
+  //const [state, setState] = useState({ password: "", email: "" });
 
   const emailHandleChange = (event) => {
     setEmail(event.target.value);
   };
+  // const testHandle = () => {
+  //   setState({ ...state, email: "test" });
+  // };
   const passwordHandleChange = (event) => {
     setPassword(event.target.value);
   };
