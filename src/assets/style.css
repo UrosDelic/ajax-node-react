@@ -13,12 +13,13 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
-
 h1 {
+  font-size: 2.441rem;
   margin-bottom: 67px;
 }
-
 label {
+  font-size: 1rem;
+  font-weight: bold;
   margin-top: 0.8em;
   margin-bottom: 0.8em;
 }
@@ -34,10 +35,6 @@ input {
   border-bottom: 2px solid #96ca3a;
   margin-bottom: 1em;
 }
-.displayArea {
-  display: flex;
-  flex-direction: column;
-}
 textArea {
   font-weight: bolder;
   background: transparent;
@@ -48,14 +45,14 @@ textArea {
   width: 47%;
   resize: vertical;
   min-height: 5em;
-  max-height: 18em;
+  max-height: 16.3em;
 }
-
 button {
+  font-size: 0.8rem;
   background-color: #96ca3a;
   border-radius: 10px;
   font-weight: bold;
-  padding: 3px;
+  padding: 2px;
   font-family: "Montserrat", sans-serif;
   border-color: #96ca3a;
   width: 30%;

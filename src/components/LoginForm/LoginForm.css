@@ -7,3 +7,7 @@
   flex-direction: column;
   margin-bottom: 1.5em;
 }
+.displayArea {
+  display: flex;
+  flex-direction: column;
+}

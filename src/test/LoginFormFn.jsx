@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../assets/style.css";
+import "../components/LoginForm/LoginForm.css";
 import getData from "../client/GetData";
 import Dinput from "../components/customElements/Dinput";
-// import DtextArea from "../components/DtextArea";
+// import DtextArea from "../components/customElements/DtextArea";
 import DtextAreaFn from "./DtextAreaFn";
 
 const LoginFormFn = () => {
@@ -56,22 +57,20 @@ const LoginFormFn = () => {
           value={password}
           onChange={passwordHandleChange}
         />
-      </div>
-
-      <button
-        disabled={!password || !email}
-        className='btn'
-        id='btn-post-data'
-        onClick={postInputData}
-      >
-        Post Data
-      </button>
-      <div className='displayArea'>
-        {/* <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} /> */}
-        <DtextAreaFn hidden={txtAreaHidden} readOnly value={showInfo()} />
+        <button
+          disabled={!password || !email}
+          className='btn'
+          id='btn-post-data'
+          onClick={postInputData}
+        >
+          Post Data
+        </button>
         <button className='btn' id='btn-get-data' onClick={getServerData}>
           Get data
         </button>
+      </div>
+      <div className='displayArea'>
+        <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} />
       </div>
     </div>
   );
