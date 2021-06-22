@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../assets/style.css";
 import getData from "../client/GetData";
-import Dinput from "../components/Dinput";
+import Dinput from "../components/customElements/Dinput";
 // import DtextArea from "../components/DtextArea";
 import DtextAreaFn from "./DtextAreaFn";
 
@@ -42,14 +42,22 @@ const LoginFormFn = () => {
   return (
     <div className='loginForm-container'>
       <h1>Ajax - Node.js in React</h1>
-      <label className='label' htmlFor='email'>
-        Email:
-      </label>
-      <Dinput type='text' id='emailField' value={email} onChange={emailHandleChange} />
-      <label className='label' htmlFor='password'>
-        Password:
-      </label>
-      <Dinput type='password' id='passwordField' value={password} onChange={passwordHandleChange} />
+      <div className='inputs-container'>
+        <label className='label' htmlFor='email'>
+          Email:
+        </label>
+        <Dinput type='text' id='emailField' value={email} onChange={emailHandleChange} />
+        <label className='label' htmlFor='password'>
+          Password:
+        </label>
+        <Dinput
+          type='password'
+          id='passwordField'
+          value={password}
+          onChange={passwordHandleChange}
+        />
+      </div>
+
       <button
         disabled={!password || !email}
         className='btn'

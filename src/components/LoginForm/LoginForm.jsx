@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "../assets/style.css";
-import getData from "../client/GetData";
-import DtextArea from "./DtextArea";
-import Dinput from "./Dinput";
+import "../../assets/style.css";
+import "./LoginForm.css";
+import getData from "../../client/GetData";
+import DtextArea from "../customElements/DtextArea";
+import Dinput from "../customElements/Dinput";
 class LoginForm extends Component {
   constructor() {
     super();
@@ -63,37 +64,39 @@ class LoginForm extends Component {
     return (
       <div className='loginForm-container'>
         <h1>Ajax - Node.js in React</h1>
-        <label className='label' htmlFor='email'>
-          Email:
-        </label>
-        <Dinput
-          type='text'
-          id='emailField'
-          value={this.state.email}
-          onChange={this.emailHandleChange}
-        />
-        <label className='label' htmlFor='password'>
-          Password:
-        </label>
-        <Dinput
-          type='password'
-          id='passwordField'
-          value={this.state.password}
-          onChange={this.passwordHandleChange}
-        />
-        <button
-          disabled={!this.state.password || !this.state.email}
-          className='btn'
-          id='btn-post-data'
-          onClick={this.postInputData}
-        >
-          Post Data
-        </button>
-        <div className='displayArea'>
-          <DtextArea hidden={this.state.txtAreaHidden} readOnly value={this.showInfo()} />
+        <div className='inputs-container'>
+          <label className='label' htmlFor='email'>
+            Email:
+          </label>
+          <Dinput
+            type='text'
+            id='emailField'
+            value={this.state.email}
+            onChange={this.emailHandleChange}
+          />
+          <label className='label' htmlFor='password'>
+            Password:
+          </label>
+          <Dinput
+            type='password'
+            id='passwordField'
+            value={this.state.password}
+            onChange={this.passwordHandleChange}
+          />
+          <button
+            disabled={!this.state.password || !this.state.email}
+            className='btn'
+            id='btn-post-data'
+            onClick={this.postInputData}
+          >
+            Post Data
+          </button>
           <button className='btn' id='btn-get-data' onClick={this.getServerData}>
             Get data
           </button>
+        </div>
+        <div className='displayArea'>
+          <DtextArea hidden={this.state.txtAreaHidden} readOnly value={this.showInfo()} />
         </div>
       </div>
     );
