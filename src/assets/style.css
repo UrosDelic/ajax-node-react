@@ -58,3 +58,7 @@ button {
   width: 30%;
   margin: 3px;
 }
+button:enabled:hover {
+  background-color: black;
+  color: #96ca3a;
+}

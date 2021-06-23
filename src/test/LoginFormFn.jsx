@@ -24,6 +24,7 @@ const LoginFormFn = () => {
   };
   const getServerData = () => {
     getData.getData().then((response) => {
+      //setState({ ...state, email: response.email });
       setEmail(response.email);
       setPassword(response.password);
     });
