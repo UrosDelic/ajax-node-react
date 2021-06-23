@@ -10,7 +10,7 @@ const LoginFormFn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [infoText, setInfoText] = useState("");
-  const [txtAreaHidden, setTxtArea] = useState(true);
+  const [txtAreaHidden, setTxtArea] = useState(false);
   //const [state, setState] = useState({ password: "", email: "" });
 
   const emailHandleChange = (event) => {
@@ -27,6 +27,8 @@ const LoginFormFn = () => {
       //setState({ ...state, email: response.email });
       setEmail(response.email);
       setPassword(response.password);
+      setTxtArea(true);
+      setInfoText(`Data for user ${response.email}`);
     });
   };
   const postInputData = () => {
@@ -34,8 +36,8 @@ const LoginFormFn = () => {
     getData
       .postData(obj)
       .then((response) => {
-        setInfoText(`data sent successfully!`);
-        setTxtArea(false);
+        setInfoText(`User ${response.email} is authorized!`);
+        setTxtArea(true);
       })
       .catch((error) => console.error(error));
   };
@@ -76,7 +78,7 @@ const LoginFormFn = () => {
         </button>
       </div>
       <div className='displayArea'>
-        <DtextArea hidden={txtAreaHidden} readOnly value={showInfo()} />
+        <DtextArea hidden={!txtAreaHidden} readOnly value={showInfo()} />
       </div>
     </div>
   );
