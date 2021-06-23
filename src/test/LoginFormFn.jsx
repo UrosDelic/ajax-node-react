@@ -64,14 +64,15 @@ const LoginFormFn = () => {
         />
         <button
           disabled={!password || !email}
-          className='btn'
+          className='btn post-button'
           id='btn-post-data'
           onClick={postInputData}
+          text-on-hover='Type in your credentials'
         >
-          Post Data
+          <span>Post Data</span>
         </button>
         <button className='btn' id='btn-get-data' onClick={getServerData}>
-          Get data
+          <span>Get data</span>
         </button>
       </div>
       <div className='displayArea'>

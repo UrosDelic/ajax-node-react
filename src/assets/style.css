@@ -61,4 +61,16 @@ button {
 button:enabled:hover {
   background-color: black;
   color: #96ca3a;
+  transition: background-color 0.5s;
+}
+
+button:disabled:hover {
+  color: black;
+  background-color: red;
+  transition: background-color 0.5s;
+}
+
+button:disabled:hover::before {
+  content: attr(text-on-hover);
+  color: white;
 }
